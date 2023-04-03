@@ -1,0 +1,10 @@
+/*   1. π name,dept_name(student)
+		 2.π course_id(σ semester='Fall' ∧ year=2009(takes))
+		 3.π name, tot_cred,ID(student⨝takes)
+		 4.σ(instructor.name='Einstein')(π student.name,student.ID,student.dept_name,instructor.name(σ (instructor.dept_name = student.dept_name)(instructor⨯student)))
+		 5.π instructor.name, student.name(σ (instructor.ID=advisor.i_id ∧ student.ID = advisor.s_id) ((instructor⨯advisor)⨯student))
+		 6.π instructor.name,section.course_id,course.title,section.building,section.room_number,section.year,section.time_slot_id, time_slot.day,time_slot.start_hr, time_slot.start_min
+(  (σ(section.course_id=teaches.course_id ∧ section.course_id=course.course_id ∧ section.time_slot_id = time_slot.time_slot_id ∧ section.semester='Fall' ∧ section.year=2009)  (
+(σ (teaches.ID = instructor.ID)((time_slot)⨯(section)⨯(course)⨯teaches⨯instructor)))))
+*/
+π name,dept_name(student)
